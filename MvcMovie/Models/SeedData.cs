@@ -6,61 +6,61 @@ using MvcMovie.Migrations;
 using System;
 using System.Linq;
 
-namespace MvcMovie.Models;
+namespace SpringFurniture.Models;
 
 public static class SeedData
 {
     public static void Initialize(IServiceProvider serviceProvider)
     {
-        using (var context = new MvcMovieContext(
+        using (var context = new SpringFurnitureContext(
             serviceProvider.GetRequiredService<
-                DbContextOptions<MvcMovieContext>>()))
+                DbContextOptions<SpringFurnitureContext>>()))
         {
-            // Look for any movies.
-            if (context.Movie.Any())
+            // Look for any furniture.
+            if (context.Furniture.Any())
             {
                 return;   // DB has been seeded
             }
-            context.Movie.AddRange(
-                new Movie
+            context.Furniture.AddRange(
+                new Furniture
                 {
-                    Title = "Romeo + Juliet",
-                    ReleaseDate = DateTime.Parse("1996-11-01"),
-                    Genre = "Romantic Drama",
-                    Rating = "R",
-                    Price = 7.99M
+                    Name = "Super Slumber",
+                    Colour = "Beige",
+                    Type = "Mattress",
+                    Rating = "4",
+                    Price = 799M
                 },
-                new Movie
+                new Furniture
                 {
-                    Title = "Clerks ",
-                    ReleaseDate = DateTime.Parse("1994-10-09"),
-                    Genre = "Comedy",
-                    Rating = "R",
-                    Price = 8.99M
+                    Name = "Comfort Sit",
+                    Colour = "Blue",
+                    Type = "Recliner",
+                    Rating = "4",
+                    Price = 899M
                 },
-                new Movie
+                new Furniture
                 {
-                    Title = "Buffalo ’66’",
-                    ReleaseDate = DateTime.Parse("1998-6-10"),
-                    Genre = "Drama",
-                    Rating = "PG-13",
-                    Price = 9.99M
+                    Name = "Family Diner",
+                    Colour = "Oak",
+                    Type = "Table",
+                    Rating = "3",
+                    Price = 999M
                 },
-                new Movie
+                new Furniture
                 {
-                    Title = "Men in Black",
-                    ReleaseDate = DateTime.Parse("1997-7-02"),
-                    Genre = "Drama",
-                    Rating = "PG-13",
-                    Price = 9.99M
+                    Name = "Simply Seat",
+                    Colour = "Brown",
+                    Type = "Chair",
+                    Rating = "5",
+                    Price = 199M
                 },
-                new Movie
+                new Furniture
                 {
-                    Title = "The Ice Storm",
-                    ReleaseDate = DateTime.Parse("1997-9-27"),
-                    Genre = "Drama",
-                    Rating = "PG-13",
-                    Price = 3.99M
+                    Name = "Hide and Sleep",
+                    Colour = "Red",
+                    Type = "Sofa Bed",
+                    Rating = "5",
+                    Price = 399M
                 }
             );
             context.SaveChanges();

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace MvcMovie.Migrations
+namespace SpringFurniture.Migrations
 {
     /// <inheritdoc />
     public partial class Rating : Migration
@@ -11,8 +11,8 @@ namespace MvcMovie.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Rating",
-                table: "Movie",
+                name: "Name",
+                table: "Furniture",
                 type: "nvarchar(max)",
                 nullable: true);
         }
@@ -21,8 +21,8 @@ namespace MvcMovie.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Rating",
-                table: "Movie");
+                name: "Colour",
+                table: "Furniture");
         }
     }
 }

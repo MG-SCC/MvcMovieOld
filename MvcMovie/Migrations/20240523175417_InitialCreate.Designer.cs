@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcMovie.Data;
+using SpringFurniture.Data;
 
 #nullable disable
 
-namespace MvcMovie.Migrations
+namespace SpringFurniture.Migrations
 {
-    [DbContext(typeof(MvcMovieContext))]
+    [DbContext(typeof(SpringFurnitureContext))]
     [Migration("20240523175417_InitialCreate")]
     partial class InitialCreate
     {
@@ -25,7 +25,7 @@ namespace MvcMovie.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MvcMovie.Models.Movie", b =>
+            modelBuilder.Entity("SpringFurniture.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
